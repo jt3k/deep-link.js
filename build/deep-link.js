@@ -173,10 +173,5 @@
 		while(i--) parseElement(elements[i]);
 	}
 
-	// umd-amd factory
-	function amdWeb () {
-		return {init: init};
-	}
-
-	return amdWeb;
+	return {init: init};
 }));
