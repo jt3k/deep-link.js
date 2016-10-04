@@ -28,6 +28,9 @@ deep-link.js is licensed under the MIT license.
 
 # Changelog
 
+## 0.2.0
+- Add umd wrapper
+
 ## 0.1.1
 - Add intent for modern Android browsers
 
