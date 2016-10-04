@@ -8,12 +8,12 @@
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
-		define([], factory);
+		define(['visibly.js'], factory);
 	} else {
 		// Browser globals
-		root.deepLink = factory();
+		root.deepLink = factory(root.visibly);
 	}
-}(this, function () {
+}(this, function (visibly) {
 
 	'use strict';
 
@@ -167,6 +167,8 @@
 	 ****************************************************************/
 
 	function init() {
+		visibly.init();
+
 		var elements = document.getElementsByTagName('a'),
 			i = elements.length;
 
