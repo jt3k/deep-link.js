@@ -5,8 +5,16 @@
  * Copyright 2015
  * Released under MIT license
  */
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define([], factory);
+	} else {
+		// Browser globals
+		root.deepLink = factory();
+	}
+}(this, function () {
 
-(function() {
 	'use strict';
 
 	/****************************************************************
@@ -96,7 +104,7 @@
 			scheme = (
 				el.getAttribute('data-android-scheme')
 			);
-			
+
 
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
@@ -158,8 +166,17 @@
 	 * INITIALIZE
 	 ****************************************************************/
 
-	var elements = document.getElementsByTagName('a'),
-		i = elements.length;
+	function init() {
+		var elements = document.getElementsByTagName('a'),
+			i = elements.length;
 
-	while(i--) parseElement(elements[i]);
-})();
+		while(i--) parseElement(elements[i]);
+	}
+
+	// umd-amd factory
+	function amdWeb () {
+		return {init: init};
+	}
+
+	return amdWeb;
+}));
