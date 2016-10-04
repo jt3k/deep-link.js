@@ -1,3 +1,10 @@
+/*!
+ * Deep-link.js
+ * https://timseverien.com/projects/deep-link/
+ *
+ * Copyright 2015
+ * Released under MIT license
+ */
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
@@ -7,13 +14,6 @@
 		root.deepLink = factory();
 	}
 }(this, function () {
-	/*!
-	 * Deep-link.js
-	 * https://timseverien.com/projects/deep-link/
-	 *
-	 * Copyright 2015
-	 * Released under MIT license
-	 */
 
 	'use strict';
 
